@@ -60,6 +60,6 @@ group :test do
 end
 
 gem 'serviceworker-rails'
-gem 'rack', '~> 2.2' 
+gem 'rack', '~> 3.1' 
 gem 'pg'
 
