@@ -1,0 +1,40 @@
+Arguments: 
+  /Users/takayamasashi/.nvm/versions/node/v22.6.0/bin/node /usr/local/bin/yarn add webpush
+
+PATH: 
+  /Users/takayamasashi/.rbenv/shims:/opt/homebrew/opt/postgresql@16/bin:/Users/takayamasashi/.nvm/versions/node/v22.6.0/bin:/Users/takayamasashi/Library/pnpm:/Users/takayamasashi/.rbenv/shims:/opt/homebrew/opt/mysql@5.7/bin:/Users/takayamasashi/.pyenv/shims:/Users/takayamasashi/.pyenv/bin:/Users/takayamasashi/Documents/google-cloud-sdk/bin:/Users/takayamasashi/.nodebrew/current/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/takayamasashi/Library/Android/sdk/platform-tools:/Users/takayamasashi/.cargo/bin:/Users/takayamasashi/Desktop/flutter/bin:/Users/takayamasashi/Library/Android/sdk/platform-tools:/usr/local/Cellar/postgresql@9.5/9.5.23/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  22.6.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/webpush: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:67029:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:520:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:520:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:634:28)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1696:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "scripts": {
+      "build": "rails assets:precompile && rails db:migrate"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
