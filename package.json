@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "rails assets:precompile && rails db:migrate"
+  }
+}
+
