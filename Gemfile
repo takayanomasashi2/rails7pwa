@@ -61,5 +61,5 @@ end
 
 gem 'serviceworker-rails'
 gem 'rack', '~> 2.2' 
-
+gem 'pg'
 
