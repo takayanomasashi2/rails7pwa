@@ -13,21 +13,23 @@ class NotificationsController < ApplicationController
 
     # プッシュ通知を送信
     begin
-      Webpush.payload_send(
-        endpoint: subscription[:endpoint],
-        message: payload.to_json,
-        p256dh: subscription[:keys][:p256dh],
-        auth: subscription[:keys][:auth],
-        vapid: {
-          subject: 'mailto:your-email@example.com',
-          public_key: vapid_public_key,
-          private_key: vapid_private_key
-        }
-      )
-      render json: { message: 'Notification sent successfully!' }, status: :ok
-    rescue => e
-      render json: { error: "Failed to send notification: #{e.message}" }, status: :unprocessable_entity
-    end
+  Webpush.payload_send(
+    endpoint: subscription[:endpoint],
+    message: payload.to_json,
+    p256dh: subscription[:keys][:p256dh],
+    auth: subscription[:keys][:auth],
+    vapid: {
+      subject: 'mailto:your-email@example.com',
+      public_key: vapid_public_key,
+      private_key: vapid_private_key
+    }
+  )
+  render json: { message: 'Notification sent successfully!' }, status: :ok
+rescue => e
+  Rails.logger.error("Webpush error: #{e.message}")
+  render json: { error: "Failed to send notification: #{e.message}" }, status: :unprocessable_entity
+end
+
   end
 end
 
