@@ -58,4 +58,6 @@
       return new Uint8Array([...rawData].map(char => char.charCodeAt(0)));
     }
   } else {
-    
+    console.log('Service Worker または PushManagerがサポートされていません');
+  }
+</script>
