@@ -1,7 +1,8 @@
 <!-- app/views/posts/index.html.erb -->
 <h1>Welcome to the Posts Index Page</h1>
 
-<button id="subscribeButton">Subscribe to Notifications</button>
+<!-- 通知送信ボタン -->
+<button id="sendNotificationButton">Send Notification</button>
 
 <script>
   // サービスワーカーがサポートされているかチェック
@@ -10,8 +11,8 @@
       .then(function (registration) {
         console.log('Service Worker registered with scope: ', registration.scope);
 
-        // プッシュ通知を購読するボタンのイベントリスナー
-        document.getElementById('subscribeButton').addEventListener('click', async function () {
+        // 通知を送るボタンのイベントリスナー
+        document.getElementById('sendNotificationButton').addEventListener('click', async function () {
           // VAPID公開鍵をRailsの環境変数から取得
           const publicKey = '<%= ENV["VAPID_PUBLIC_KEY"] %>';
 
@@ -30,17 +31,17 @@
             });
 
             // 購読情報をサーバーに送信
-            await fetch('/subscriptions', {
+            await fetch('/send_notification', {
               method: 'POST',
-              body: JSON.stringify(subscription),
+              body: JSON.stringify({ subscription: subscription }),
               headers: {
                 'Content-Type': 'application/json'
               }
             });
 
-            alert('Notification subscription created successfully!');
+            alert('Notification sent successfully!');
           } catch (error) {
-            console.error('Error subscribing to push notifications:', error);
+            console.error('Error sending push notifications:', error);
           }
         });
       })

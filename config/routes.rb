@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # Define the root path route ("/")
   root "posts#index" # この行を有効にして、rootパスを設定
   post '/subscriptions', to: 'subscriptions#create'
+  post '/send_notification', to: 'notifications#send_notification'
 end
